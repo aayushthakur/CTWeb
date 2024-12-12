@@ -57,6 +57,16 @@
     </script>
 
     <link rel="manifest" href="/manifest.json" />
+
+    <style>
+      #nativeDisplayContainer {
+          height: 100vh;
+          width: 100vw;
+          font-size: 20px;
+          margin: 0px;
+          
+      }
+  </style>
   </head>
   <body>
        
@@ -64,15 +74,24 @@
     <!-- onUserLogin -->
    
     <!-- event -->
+     <div id="button-container">
     <button id="event" onclick="pushEvent()">Push Event</button> <br><br>
     <button id="login" onclick="onuserlogin()">OnUserLogin</button><br><br>
+    <button id="webpopup" onclick="webpopupEvent()">webpopup event</button><br><br>
+    <button id="box default webpopup" onclick="boxwebpopupEvent()">box default webpopup event</button><br><br>
+    <button id="custom box webpopup" onclick="customboxwebpopupEvent()">custom box webpopup event</button><br><br>
     <button id="ipfalse" onclick="ipfalse()">IP FALSE</button><br><br>
     <button id="iptrue" onclick="iptrue()">IP TRUE</button><br><br>
     <button id="login" onclick="profilepush()">ProfilePush</button><br><br>
     <button id="loc" onclick="pushnotif()">Send Notification</button><br><br>
     <button id="ctid" onclick="showctid()">Show CT ID </button><br><br>
     <button id="ctid" onclick="clear()">Clear CT ID </button><br><br>
+    <button id="webnativedisplay1" onclick="webNativeDisplayEvent1()">Web Native Display1</button><br><br>
     <h2 id="test"> </h2>
+    <!-- <div id="webnativedisplay1"> </div> -->
+    <div id="nativeDisplayContainer"></div>
+
+     </div>
     <script>
       
     //   setTimeout(function() {
@@ -93,6 +112,19 @@
       let pushEvent = () => {
         clevertap.event.push("ProductViewed");
       };
+
+      let webpopupEvent = () => {
+        clevertap.event.push("web popup event");
+      };
+
+      let boxwebpopupEvent = () => {
+        clevertap.event.push("box web popup event");
+      };
+
+      let customboxwebpopupEvent = () => {
+        clevertap.event.push("custom box web popup event");
+      };
+
 
       let ipfalse = () => {
         
@@ -130,6 +162,9 @@
 
       let clear = () => {
         clevertap.clear();
+      };
+      let webNativeDisplayEvent1 = () => {
+        clevertap.event.push("web native trigger");
       };
     </script>
     <!-- key/value events -->
